@@ -14,4 +14,9 @@ class Solution:
                 r = m
             else:
                 l = m + 1
-        return l if (l < len(nums) and nums[l] == target) else -1
+        return l if l < len(nums) and nums[l] == target else -1
+
+if __name__ == '__main__':
+    print(Solution().search([1,49,90,100,112], 90) == 2)
+    print(Solution().search([30,100,200,300], 310) == -1)
+    print(Solution().search([30,100,200,300], 150) == -1)
