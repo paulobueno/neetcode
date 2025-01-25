@@ -9,11 +9,11 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums)
         while l < r:
-            m = l + ((r - l) // 2)
+            m = l + ((r - l)//2)
             if nums[m] >= target:
                 r = m
             else:
-                l = m + 1
+                l = 1 + m
         return l if l < len(nums) and nums[l] == target else -1
 
 if __name__ == '__main__':
