@@ -48,6 +48,34 @@ class Solution:
 
 
 
+# SOLUTION THAT RECEIVES A TREE THAT FOLLOWS BINAY TREE SEACH RULES (LEFT ALWAYS LOWER THAN RIGHT)
+class Solution:
+
+    def get_node_path(self, root, node):
+        path = []
+        if not root or not node:
+            return path
+        path.append(root)
+        if node.val > root.val:
+            path.extend(self.get_node_path(root.right, node))
+        elif node.val < root.val:
+            path.extend(self.get_node_path(root.left, node))
+        return path
+
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+        p_path = self.get_node_path(root, p)
+        q_path = self.get_node_path(root, q)
+        last_node = None
+
+        for p_node, q_node in zip(p_path, q_path):
+            if p_node.val == q_node.val:
+                last_node = p_node
+            else:
+                break
+
+        return last_node
+
+
 # if __name__ == "__main__":
 #     root = TreeNode(8)
 #     root.left = TreeNode(2)
