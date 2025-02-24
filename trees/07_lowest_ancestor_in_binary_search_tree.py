@@ -1,6 +1,7 @@
 # URL https://neetcode.io/problems/lowest-common-ancestor-in-binary-search-tree
-# Time Complexity: O(x)
-# Space Complexity: O(x)
+# Time Complexity: O(h)
+# Space Complexity: O(h)
+# where h = hight of the tree
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
