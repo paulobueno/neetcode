@@ -1,4 +1,4 @@
-# URL https://neetcode.io/problems/invert-a-binary-tree
+# URL https://neetcode.io/problems/subsets
 # Time Complexity: O(n*2^n)
 # Space Complexity: O(n)
 
@@ -11,10 +11,8 @@ class Solution:
             if i >= len(nums):
                 result.append(subset.copy())
                 return
-
             subset.append(nums[i])
             dfs(i + 1)
-
             subset.pop()
             dfs(i + 1)
 
